@@ -1,1 +1,3 @@
 Its Very very improtant to note that after you first upload the code to the esp8266 you have to commnet 
+rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));
+or else it will keep reseting after boot
