@@ -1,3 +1,6 @@
 Its Very very improtant to note that after you first upload the code to the esp8266 you have to commnet 
 rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));
 or else it will keep reseting after boot
+
+
+Also for ESP01 you have to change wire.begin(2,0); if you forgot to do this esp01 will not recognize the output pins
