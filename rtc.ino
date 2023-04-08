@@ -9,7 +9,7 @@ char t[32];
 void setup()
 {
   Serial.begin(9600);
-  Wire.begin();
+  Wire.begin();  // for ESP01 you have to change it to Wire.begin(2,0);
   
   lcd.begin();   // Initialize the LCD display module
   lcd.backlight();   // Turn on the LCD backlight
@@ -17,7 +17,8 @@ void setup()
 
 
   rtc.begin();
-  rtc.adjust(DateTime(F(__DATE__),F(__TIME__)));
+  rtc.adjust(DateTime(F(__DATE__),F(__TIME__))); // Impontant note after first upload DS_1307 gets syncronize with current time
+                                                 // so remove or commnet this line rtc.adjust after first upload and reupload the code
   //rtc.adjust(DateTime(2019, 1, 21, 5, 0, 0));
 }
 void loop()
